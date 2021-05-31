@@ -16,5 +16,12 @@ namespace Contact_Tracer_2021
             form.Show();
             this.Hide();
         }
+
+        private void button_Register_Click(object sender, EventArgs e)
+        {
+            reg_Form form = new reg_Form();
+            form.Show();
+            this.Hide();
+        }
     }
 }

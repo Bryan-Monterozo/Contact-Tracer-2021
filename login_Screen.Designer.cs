@@ -31,9 +31,9 @@ namespace Contact_Tracer_2021
         {
             this.login_Panel = new System.Windows.Forms.Panel();
             this.login_Title = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textbox_Login_Username = new System.Windows.Forms.TextBox();
             this.label_Username = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textbox_Login_Password = new System.Windows.Forms.TextBox();
             this.label_Password = new System.Windows.Forms.Label();
             this.button_TryLogin = new System.Windows.Forms.Button();
             this.button_BackLogin = new System.Windows.Forms.Button();
@@ -61,12 +61,12 @@ namespace Contact_Tracer_2021
             this.login_Title.TabIndex = 0;
             this.login_Title.Text = "Contact Tracer 2021";
             // 
-            // textBox1
+            // textbox_Login_Username
             // 
-            this.textBox1.Location = new System.Drawing.Point(86, 226);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(300, 22);
-            this.textBox1.TabIndex = 1;
+            this.textbox_Login_Username.Location = new System.Drawing.Point(86, 226);
+            this.textbox_Login_Username.Name = "textbox_Login_Username";
+            this.textbox_Login_Username.Size = new System.Drawing.Size(300, 22);
+            this.textbox_Login_Username.TabIndex = 1;
             // 
             // label_Username
             // 
@@ -79,13 +79,13 @@ namespace Contact_Tracer_2021
             this.label_Username.TabIndex = 2;
             this.label_Username.Text = "USERNAME:";
             // 
-            // textBox2
+            // textbox_Login_Password
             // 
-            this.textBox2.Location = new System.Drawing.Point(86, 287);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(300, 22);
-            this.textBox2.TabIndex = 3;
+            this.textbox_Login_Password.Location = new System.Drawing.Point(86, 287);
+            this.textbox_Login_Password.Name = "textbox_Login_Password";
+            this.textbox_Login_Password.PasswordChar = '*';
+            this.textbox_Login_Password.Size = new System.Drawing.Size(300, 22);
+            this.textbox_Login_Password.TabIndex = 3;
             // 
             // label_Password
             // 
@@ -128,9 +128,9 @@ namespace Contact_Tracer_2021
             this.Controls.Add(this.button_BackLogin);
             this.Controls.Add(this.button_TryLogin);
             this.Controls.Add(this.label_Password);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textbox_Login_Password);
             this.Controls.Add(this.label_Username);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textbox_Login_Username);
             this.Controls.Add(this.login_Panel);
             this.MaximizeBox = false;
             this.Name = "login_Screen";
@@ -147,9 +147,9 @@ namespace Contact_Tracer_2021
 
         private System.Windows.Forms.Panel login_Panel;
         private System.Windows.Forms.Label login_Title;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textbox_Login_Username;
         private System.Windows.Forms.Label label_Username;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textbox_Login_Password;
         private System.Windows.Forms.Label label_Password;
         private System.Windows.Forms.Button button_TryLogin;
         private System.Windows.Forms.Button button_BackLogin;

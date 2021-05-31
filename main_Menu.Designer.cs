@@ -82,6 +82,7 @@ namespace Contact_Tracer_2021
             this.button_Register.TabIndex = 3;
             this.button_Register.Text = "REGISTER";
             this.button_Register.UseVisualStyleBackColor = true;
+            this.button_Register.Click += new System.EventHandler(this.button_Register_Click);
             // 
             // button_Admin
             // 
