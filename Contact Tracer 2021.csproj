@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="user_Reg_Data.cs" />
     <Compile Include="main_Menu.cs">
       <SubType>Form</SubType>
     </Compile>

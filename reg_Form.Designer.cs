@@ -41,12 +41,12 @@ namespace Contact_Tracer_2021
             this.dtpicker_Birthdate = new System.Windows.Forms.DateTimePicker();
             this.textbox_Age = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textbox_Num = new System.Windows.Forms.TextBox();
+            this.label_Pnum = new System.Windows.Forms.Label();
+            this.textbox_Pnum = new System.Windows.Forms.TextBox();
             this.textbox_Username = new System.Windows.Forms.TextBox();
             this.textbox_Password = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label_UserReg = new System.Windows.Forms.Label();
+            this.label_PassReg = new System.Windows.Forms.Label();
             this.button_RegisterNow = new System.Windows.Forms.Button();
             this.button_BackRegister = new System.Windows.Forms.Button();
             this.login_Panel.SuspendLayout();
@@ -169,23 +169,23 @@ namespace Contact_Tracer_2021
             this.label1.TabIndex = 12;
             this.label1.Text = "Age:";
             // 
-            // label2
+            // label_Pnum
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(98, 441);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 22);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Phone Number:";
+            this.label_Pnum.AutoSize = true;
+            this.label_Pnum.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Pnum.ForeColor = System.Drawing.Color.White;
+            this.label_Pnum.Location = new System.Drawing.Point(98, 441);
+            this.label_Pnum.Name = "label_Pnum";
+            this.label_Pnum.Size = new System.Drawing.Size(146, 22);
+            this.label_Pnum.TabIndex = 13;
+            this.label_Pnum.Text = "Phone Number:";
             // 
-            // textbox_Num
+            // textbox_Pnum
             // 
-            this.textbox_Num.Location = new System.Drawing.Point(251, 443);
-            this.textbox_Num.Name = "textbox_Num";
-            this.textbox_Num.Size = new System.Drawing.Size(300, 22);
-            this.textbox_Num.TabIndex = 14;
+            this.textbox_Pnum.Location = new System.Drawing.Point(251, 443);
+            this.textbox_Pnum.Name = "textbox_Pnum";
+            this.textbox_Pnum.Size = new System.Drawing.Size(300, 22);
+            this.textbox_Pnum.TabIndex = 14;
             // 
             // textbox_Username
             // 
@@ -202,27 +202,27 @@ namespace Contact_Tracer_2021
             this.textbox_Password.Size = new System.Drawing.Size(300, 22);
             this.textbox_Password.TabIndex = 16;
             // 
-            // label3
+            // label_UserReg
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(139, 489);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 22);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Username:";
+            this.label_UserReg.AutoSize = true;
+            this.label_UserReg.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_UserReg.ForeColor = System.Drawing.Color.White;
+            this.label_UserReg.Location = new System.Drawing.Point(139, 489);
+            this.label_UserReg.Name = "label_UserReg";
+            this.label_UserReg.Size = new System.Drawing.Size(105, 22);
+            this.label_UserReg.TabIndex = 17;
+            this.label_UserReg.Text = "Username:";
             // 
-            // label4
+            // label_PassReg
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(141, 534);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 22);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Password:";
+            this.label_PassReg.AutoSize = true;
+            this.label_PassReg.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PassReg.ForeColor = System.Drawing.Color.White;
+            this.label_PassReg.Location = new System.Drawing.Point(141, 534);
+            this.label_PassReg.Name = "label_PassReg";
+            this.label_PassReg.Size = new System.Drawing.Size(103, 22);
+            this.label_PassReg.TabIndex = 18;
+            this.label_PassReg.Text = "Password:";
             // 
             // button_RegisterNow
             // 
@@ -233,6 +233,7 @@ namespace Contact_Tracer_2021
             this.button_RegisterNow.TabIndex = 19;
             this.button_RegisterNow.Text = "REGISTER";
             this.button_RegisterNow.UseVisualStyleBackColor = true;
+            this.button_RegisterNow.Click += new System.EventHandler(this.button_RegisterNow_Click);
             // 
             // button_BackRegister
             // 
@@ -252,12 +253,12 @@ namespace Contact_Tracer_2021
             this.ClientSize = new System.Drawing.Size(800, 720);
             this.Controls.Add(this.button_BackRegister);
             this.Controls.Add(this.button_RegisterNow);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label_PassReg);
+            this.Controls.Add(this.label_UserReg);
             this.Controls.Add(this.textbox_Password);
             this.Controls.Add(this.textbox_Username);
-            this.Controls.Add(this.textbox_Num);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textbox_Pnum);
+            this.Controls.Add(this.label_Pnum);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textbox_Age);
             this.Controls.Add(this.dtpicker_Birthdate);
@@ -294,12 +295,12 @@ namespace Contact_Tracer_2021
         private System.Windows.Forms.DateTimePicker dtpicker_Birthdate;
         private System.Windows.Forms.TextBox textbox_Age;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textbox_Num;
+        private System.Windows.Forms.Label label_Pnum;
+        private System.Windows.Forms.TextBox textbox_Pnum;
         private System.Windows.Forms.TextBox textbox_Username;
         private System.Windows.Forms.TextBox textbox_Password;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label_UserReg;
+        private System.Windows.Forms.Label label_PassReg;
         private System.Windows.Forms.Button button_RegisterNow;
         private System.Windows.Forms.Button button_BackRegister;
     }
