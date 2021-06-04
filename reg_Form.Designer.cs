@@ -244,6 +244,7 @@ namespace Contact_Tracer_2021
             this.button_BackRegister.TabIndex = 20;
             this.button_BackRegister.Text = "BACK";
             this.button_BackRegister.UseVisualStyleBackColor = true;
+            this.button_BackRegister.Click += new System.EventHandler(this.button_BackRegister_Click);
             // 
             // reg_Form
             // 

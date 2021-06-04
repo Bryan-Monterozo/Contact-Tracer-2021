@@ -14,7 +14,7 @@ namespace Contact_Tracer_2021
 {
     public partial class reg_Form : Form
     {
-        XmlSerializer xs;           //easy read/write xml file
+        XmlSerializer xs;           //read/write xml file
         List<user_Reg_Data> lsURD;  // list containing user registration data
 
         public reg_Form()
@@ -42,6 +42,17 @@ namespace Contact_Tracer_2021
             lsURD.Add(urd);
             xs.Serialize(fs, lsURD);
             fs.Close();
+
+            main_Menu form = new main_Menu();
+            form.Show();
+            this.Hide();
+        }
+
+        private void button_BackRegister_Click(object sender, EventArgs e)
+        {
+            main_Menu form = new main_Menu();
+            form.Show();
+            this.Hide();
         }
     }
 }

@@ -107,6 +107,7 @@ namespace Contact_Tracer_2021
             this.button_TryLogin.TabIndex = 5;
             this.button_TryLogin.Text = "LOGIN";
             this.button_TryLogin.UseVisualStyleBackColor = true;
+            this.button_TryLogin.Click += new System.EventHandler(this.button_TryLogin_Click);
             // 
             // button_BackLogin
             // 
