@@ -183,24 +183,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="profile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="profile.Designer.cs">
-      <DependentUpon>profile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="user_Reg_Data.cs" />
+    <Compile Include="user_Data.cs" />
     <Compile Include="main_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="main_Menu.Designer.cs">
       <DependentUpon>main_Menu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="login_Screen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="login_Screen.Designer.cs">
-      <DependentUpon>login_Screen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -212,12 +200,6 @@
     </Compile>
     <EmbeddedResource Include="main_Menu.resx">
       <DependentUpon>main_Menu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="login_Screen.resx">
-      <DependentUpon>login_Screen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="profile.resx">
-      <DependentUpon>profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

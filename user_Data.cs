@@ -12,7 +12,7 @@ namespace Contact_Tracer_2021
 
         public string lname { get; set; }
 
-        public DateTime birthdate { get; set; }
+        public string birthdate { get; set; }
 
         public string age { get; set; }
 
@@ -20,8 +20,12 @@ namespace Contact_Tracer_2021
 
         public string pnumber { get; set; }
 
-        public string username { get; set; }
+        public string sex { get; set; }
 
-        public string password { get; set; }
+        public string email { get; set; }
+
+        public string hstats { get; set; }
+
+        public string curdt { get; set; }
     }
 }

@@ -10,18 +10,16 @@ namespace Contact_Tracer_2021
             InitializeComponent();
         }
 
-        private void button_Login_Click(object sender, EventArgs e)
-        {
-            login_Screen form = new login_Screen();
-            form.Show();
-            this.Hide();
-        }
-
         private void button_Register_Click(object sender, EventArgs e)
         {
             reg_Form form = new reg_Form();
             form.Show();
             this.Hide();
+        }
+
+        private void main_Menu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

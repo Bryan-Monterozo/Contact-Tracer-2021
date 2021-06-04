@@ -31,9 +31,8 @@ namespace Contact_Tracer_2021
         {
             this.menu_Panel = new System.Windows.Forms.Panel();
             this.menu_Title = new System.Windows.Forms.Label();
-            this.button_Login = new System.Windows.Forms.Button();
             this.button_Register = new System.Windows.Forms.Button();
-            this.button_Admin = new System.Windows.Forms.Button();
+            this.button_Contact_Log = new System.Windows.Forms.Button();
             this.menu_Panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,23 +59,11 @@ namespace Contact_Tracer_2021
             this.menu_Title.TabIndex = 0;
             this.menu_Title.Text = "Contact Tracer 2021";
             // 
-            // button_Login
-            // 
-            this.button_Login.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button_Login.Font = new System.Drawing.Font("Britannic Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Login.Location = new System.Drawing.Point(155, 198);
-            this.button_Login.Name = "button_Login";
-            this.button_Login.Size = new System.Drawing.Size(150, 50);
-            this.button_Login.TabIndex = 2;
-            this.button_Login.Text = "LOGIN";
-            this.button_Login.UseVisualStyleBackColor = true;
-            this.button_Login.Click += new System.EventHandler(this.button_Login_Click);
-            // 
             // button_Register
             // 
             this.button_Register.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button_Register.Font = new System.Drawing.Font("Britannic Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Register.Location = new System.Drawing.Point(155, 266);
+            this.button_Register.Location = new System.Drawing.Point(159, 212);
             this.button_Register.Name = "button_Register";
             this.button_Register.Size = new System.Drawing.Size(150, 50);
             this.button_Register.TabIndex = 3;
@@ -84,16 +71,16 @@ namespace Contact_Tracer_2021
             this.button_Register.UseVisualStyleBackColor = true;
             this.button_Register.Click += new System.EventHandler(this.button_Register_Click);
             // 
-            // button_Admin
+            // button_Contact_Log
             // 
-            this.button_Admin.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button_Admin.Font = new System.Drawing.Font("Britannic Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Admin.Location = new System.Drawing.Point(155, 334);
-            this.button_Admin.Name = "button_Admin";
-            this.button_Admin.Size = new System.Drawing.Size(150, 50);
-            this.button_Admin.TabIndex = 4;
-            this.button_Admin.Text = "ADMIN";
-            this.button_Admin.UseVisualStyleBackColor = true;
+            this.button_Contact_Log.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button_Contact_Log.Font = new System.Drawing.Font("Britannic Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Contact_Log.Location = new System.Drawing.Point(159, 280);
+            this.button_Contact_Log.Name = "button_Contact_Log";
+            this.button_Contact_Log.Size = new System.Drawing.Size(150, 50);
+            this.button_Contact_Log.TabIndex = 4;
+            this.button_Contact_Log.Text = "VIEW LOG";
+            this.button_Contact_Log.UseVisualStyleBackColor = true;
             // 
             // main_Menu
             // 
@@ -102,14 +89,14 @@ namespace Contact_Tracer_2021
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(482, 553);
-            this.Controls.Add(this.button_Admin);
+            this.Controls.Add(this.button_Contact_Log);
             this.Controls.Add(this.button_Register);
-            this.Controls.Add(this.button_Login);
             this.Controls.Add(this.menu_Panel);
             this.MaximizeBox = false;
             this.Name = "main_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contact Tracer 2021";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.main_Menu_FormClosed);
             this.menu_Panel.ResumeLayout(false);
             this.menu_Panel.PerformLayout();
             this.ResumeLayout(false);
@@ -120,8 +107,7 @@ namespace Contact_Tracer_2021
 
         private System.Windows.Forms.Panel menu_Panel;
         private System.Windows.Forms.Label menu_Title;
-        private System.Windows.Forms.Button button_Login;
         private System.Windows.Forms.Button button_Register;
-        private System.Windows.Forms.Button button_Admin;
+        private System.Windows.Forms.Button button_Contact_Log;
     }
 }
