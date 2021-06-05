@@ -81,6 +81,7 @@ namespace Contact_Tracer_2021
             this.button_Contact_Log.TabIndex = 4;
             this.button_Contact_Log.Text = "VIEW LOG";
             this.button_Contact_Log.UseVisualStyleBackColor = true;
+            this.button_Contact_Log.Click += new System.EventHandler(this.button_Contact_Log_Click);
             // 
             // main_Menu
             // 

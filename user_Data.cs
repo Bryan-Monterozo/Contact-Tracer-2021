@@ -8,24 +8,24 @@ namespace Contact_Tracer_2021
 {
     public class user_Reg_Data
     {
-        public string fname { get; set; }
+        public string FIRSTNAME { get; set; }
 
-        public string lname { get; set; }
+        public string LASTNAME { get; set; }
 
-        public string birthdate { get; set; }
+        public string BIRTHDATE { get; set; }
 
-        public string age { get; set; }
+        public string AGE { get; set; }
 
-        public string address { get; set; }
+        public string ADDRESS { get; set; }
 
-        public string pnumber { get; set; }
+        public string PHONE_NO { get; set; }
 
-        public string sex { get; set; }
+        public string SEX { get; set; }
 
-        public string email { get; set; }
+        public string EMAIL { get; set; }
 
-        public string hstats { get; set; }
+        public string HSTATUS { get; set; }
 
-        public string curdt { get; set; }
+        public string CUR_DATE_TIME { get; set; }
     }
 }

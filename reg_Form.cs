@@ -64,50 +64,61 @@ namespace Contact_Tracer_2021
             {
                 if (status_ChkBox.GetItemChecked(i))
                 {
-                    status = status + status_ChkBox.Items[i].ToString() + "\n";
+                    status = status + status_ChkBox.Items[i].ToString() + " ";
                 }
             }
 
-            if (File.Exists(".\\Urd.xml"))//for modifying .Xml file database
+            DialogResult yesno_Result = MessageBox.Show("Your inputed details will be stored and can be viewed by others. Do You Still Wish To Continue?", "Contact Tracer 2021",MessageBoxButtons.YesNo);
+            if (yesno_Result == DialogResult.Yes)
             {
-                user_Reg_Data urd = new user_Reg_Data();
+                try
+                {
+                    if (File.Exists(".\\Urd.xml"))//for modifying .Xml file database
+                    {
+                        user_Reg_Data urd = new user_Reg_Data();
 
-                urd.fname = textbox_Fname.Text;
-                urd.lname = textbox_Lname.Text;
-                urd.birthdate = date_Str;
-                urd.age = textbox_Age.Text;
-                urd.address = textbox_Address.Text;
-                urd.pnumber = textbox_Pnum.Text;
-                urd.sex = dropdown_Sex.Text;
-                urd.email = textbox_Email.Text;
-                urd.hstats = status;
-                urd.curdt = label_CurDate.Text + " " + label_CurTime.Text;
+                        urd.FIRSTNAME = textbox_Fname.Text;
+                        urd.LASTNAME = textbox_Lname.Text;
+                        urd.BIRTHDATE = date_Str;
+                        urd.AGE = textbox_Age.Text;
+                        urd.ADDRESS = textbox_Address.Text;
+                        urd.PHONE_NO = textbox_Pnum.Text;
+                        urd.SEX = dropdown_Sex.Text;
+                        urd.EMAIL = textbox_Email.Text;
+                        urd.HSTATUS = status;
+                        urd.CUR_DATE_TIME = label_CurDate.Text + " " + label_CurTime.Text;
 
-                modify_Data(urd);
+                        modify_Data(urd);
+                    }
+                    else
+                    {
+                        FileStream fsNew = new FileStream(".\\Urd.Xml", FileMode.Create, FileAccess.Write);   //for creating.Xml file database
+                        user_Reg_Data urd = new user_Reg_Data();
+                        urd.FIRSTNAME = textbox_Fname.Text;
+                        urd.LASTNAME = textbox_Lname.Text;
+                        urd.BIRTHDATE = date_Str;
+                        urd.AGE = textbox_Age.Text;
+                        urd.ADDRESS = textbox_Address.Text;
+                        urd.PHONE_NO = textbox_Pnum.Text;
+                        urd.SEX = dropdown_Sex.Text;
+                        urd.EMAIL = textbox_Email.Text;
+                        urd.HSTATUS = status;
+                        urd.CUR_DATE_TIME = label_CurDate.Text + " " + label_CurTime.Text;
+
+                        lsURD.Add(urd);
+                        xs.Serialize(fsNew, lsURD);
+                        fsNew.Close();
+                    }
+
+                    main_Menu form = new main_Menu();
+                    form.Show();
+                    this.Hide();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            else
-            {
-                FileStream fsNew = new FileStream(".\\Urd.Xml", FileMode.Create, FileAccess.Write);   //for creating.Xml file database
-                user_Reg_Data urd = new user_Reg_Data();
-                urd.fname = textbox_Fname.Text;
-                urd.lname = textbox_Lname.Text;
-                urd.birthdate = date_Str;
-                urd.age = textbox_Age.Text;
-                urd.address = textbox_Address.Text;
-                urd.pnumber = textbox_Pnum.Text;
-                urd.sex = dropdown_Sex.Text;
-                urd.email = textbox_Email.Text;
-                urd.hstats = status;
-                urd.curdt = label_CurDate.Text + " " + label_CurTime.Text;
-
-                lsURD.Add(urd);
-                xs.Serialize(fsNew, lsURD);
-                fsNew.Close();
-            }
-
-            main_Menu form = new main_Menu();
-            form.Show();
-            this.Hide();
         }
 
         private void button_BackRegister_Click(object sender, EventArgs e)
@@ -131,13 +142,13 @@ namespace Contact_Tracer_2021
             dtpicker_Birthdate.Value = DateTime.Today;
         }
 
-        private void timer_Ticker_Tick(object sender, EventArgs e)
+        private void timer_Ticker_Tick(object sender, EventArgs e) //time ticker
         {
             label_CurTime.Text = DateTime.Now.ToLongTimeString();
             timer_Ticker.Start();
         }
 
-        private void dtpicker_Birthdate_ValueChanged(object sender, EventArgs e)
+        private void dtpicker_Birthdate_ValueChanged(object sender, EventArgs e) //only show/convert date to string
         {
             date_Str = dtpicker_Birthdate.Value.ToString("yyyy-MM-dd");
         }
