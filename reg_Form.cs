@@ -15,25 +15,17 @@ namespace Contact_Tracer_2021
     public partial class reg_Form : Form
     {
         string date_Str = "";
-        //string status = "";
         XmlSerializer xs;           //read/write xml file
         List<user_Reg_Data> lsURD;  // list containing user registration data
-
         public reg_Form()
         {
             InitializeComponent();
-
             lsURD = new List<user_Reg_Data>();
             xs = new XmlSerializer(typeof(List<user_Reg_Data>));
-
         }
         public void modify_Data(user_Reg_Data obj) //modifier
         {
-            //FileStream fsRead = new FileStream(".\\Urd.Xml", FileMode.Open, FileAccess.Read);
-            //FileStream fsMod = new FileStream(".\\Urd.Xml", FileMode.Open, FileAccess.Write);
-            
             List<user_Reg_Data> lsURD = null;
-
             try
             {
                 using (Stream s = File.OpenRead(".\\Urd.xml"))
@@ -46,16 +38,11 @@ namespace Contact_Tracer_2021
                 lsURD = new List<user_Reg_Data>();
             }
             lsURD.Add(obj);
-            //fsRead.Close();
-
             using (Stream s = File.OpenWrite(".\\Urd.xml"))
             {
                 xs.Serialize(s, lsURD);
-                //fsMod.Close();
             }
-            //fsMod.Close();
         }
-
         private void button_RegisterNow_Click(object sender, EventArgs e)
         {
             byte i;
@@ -67,7 +54,6 @@ namespace Contact_Tracer_2021
                     status = status + status_ChkBox.Items[i].ToString() + " ";
                 }
             }
-
             DialogResult yesno_Result = MessageBox.Show("Your inputed details will be stored and can be viewed by others. Do You Still Wish To Continue?", "Contact Tracer 2021",MessageBoxButtons.YesNo);
             if (yesno_Result == DialogResult.Yes)
             {
@@ -76,7 +62,6 @@ namespace Contact_Tracer_2021
                     if (File.Exists(".\\Urd.xml"))//for modifying .Xml file database
                     {
                         user_Reg_Data urd = new user_Reg_Data();
-
                         urd.FIRSTNAME = textbox_Fname.Text;
                         urd.LASTNAME = textbox_Lname.Text;
                         urd.BIRTHDATE = date_Str;
@@ -87,7 +72,6 @@ namespace Contact_Tracer_2021
                         urd.EMAIL = textbox_Email.Text;
                         urd.HSTATUS = status;
                         urd.CUR_DATE_TIME = label_CurDate.Text + " " + label_CurTime.Text;
-
                         modify_Data(urd);
                     }
                     else
@@ -104,12 +88,10 @@ namespace Contact_Tracer_2021
                         urd.EMAIL = textbox_Email.Text;
                         urd.HSTATUS = status;
                         urd.CUR_DATE_TIME = label_CurDate.Text + " " + label_CurTime.Text;
-
                         lsURD.Add(urd);
                         xs.Serialize(fsNew, lsURD);
                         fsNew.Close();
                     }
-
                     main_Menu form = new main_Menu();
                     form.Show();
                     this.Hide();
@@ -120,43 +102,31 @@ namespace Contact_Tracer_2021
                 }
             }
         }
-
         private void button_BackRegister_Click(object sender, EventArgs e)
         {
             main_Menu form = new main_Menu();
             form.Show();
             this.Hide();
         }
-
         private void reg_Form_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-
         private void reg_Form_Load(object sender, EventArgs e)
         {
             timer_Ticker.Start();
             label_CurTime.Text = DateTime.Now.ToLongTimeString();
             label_CurDate.Text = DateTime.Now.ToLongDateString();
-
             dtpicker_Birthdate.Value = DateTime.Today;
         }
-
         private void timer_Ticker_Tick(object sender, EventArgs e) //time ticker
         {
             label_CurTime.Text = DateTime.Now.ToLongTimeString();
             timer_Ticker.Start();
         }
-
         private void dtpicker_Birthdate_ValueChanged(object sender, EventArgs e) //only show/convert date to string
         {
             date_Str = dtpicker_Birthdate.Value.ToString("yyyy-MM-dd");
         }
-
-        /*private void status_ChkBox_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            var checkedListBox = (CheckedListBox)sender;
-            status = checkedListBox.Items[e.Index].ToString();
-        }*/
     }
 }

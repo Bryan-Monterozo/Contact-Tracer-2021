@@ -16,22 +16,18 @@ namespace Contact_Tracer_2021
     {
         List<user_Reg_Data> lsURD;
         XmlSerializer xs;
-
         public log_Form()
         {
             InitializeComponent();
-
             lsURD = new List<user_Reg_Data>();
             xs = new XmlSerializer(typeof(List<user_Reg_Data>));
         }
-
         private void log_Load(object sender, EventArgs e)
         {
             try
             {
                 FileStream fsShow = new FileStream(".\\Urd.Xml", FileMode.Open, FileAccess.Read);
                 lsURD = (List<user_Reg_Data>)xs.Deserialize(fsShow);
-
                 dataGrid_LogView.DataSource = lsURD;
                 fsShow.Close();
             }
@@ -46,23 +42,19 @@ namespace Contact_Tracer_2021
                 }
             }
         }
-
         private void button_BackLog_Click(object sender, EventArgs e)
         {
             main_Menu form = new main_Menu();
             form.Show();
             this.Hide();
         }
-
         private void log_Form_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-
-        private void dataGrid_LogView_DataSourceChanged(object sender, EventArgs e)
+        private void dataGrid_LogView_DataSourceChanged(object sender, EventArgs e) // datdagrid column sizes
         {
-            // datdagrid column sizes
-            dataGrid_LogView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGrid_LogView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells; 
             dataGrid_LogView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGrid_LogView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGrid_LogView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -72,7 +64,6 @@ namespace Contact_Tracer_2021
             dataGrid_LogView.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGrid_LogView.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGrid_LogView.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-
             for (int i = 0; i <= dataGrid_LogView.Columns.Count - 1; i++)
             {
                 int colw = dataGrid_LogView.Columns[i].Width;
